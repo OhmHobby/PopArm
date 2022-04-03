@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div class="wrapper">
+        <img id="popcat" src="./images/armc.jpg" alt="">
+    </div>
+
+    <div>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Pop Arm</title>
+    </div>
+
+        <div class="container">
+        <h1 id="text">Pop Arm</h1>
+        <p id="target">0</p>
+    </div>
+
+    <script>
+        window.onload = () =>{
+            let img = document.querySelector('#popcat');
+            let counter = document.querySelector('#target');
+            let text = document.querySelector('#text');
+            let score = 0;
+            let sound_open = new Audio('./sound/sound-open.mp3');
+            let sound_close = new Audio('./sound/sound-close.mp3');
+            
+            //config
+            
+            //event
+            img.addEventListener('mousedown', ()=> {
+                img.src = './images/armo.jpg';
+                sound_open.play();
+                addToCounter();
+                Fbirth();
+                OCbirth();
+                if (score == 210258) {
+                angry_in_birth_day();
+                }
+            })
+            img.addEventListener('mouseup', ()=> {
+                img.src = './images/armc.jpg';
+                sound_close.play();
+                if (score == 210258) {
+                angry_in_birth_day();
+                }
+                OCbirth();
+                text.innerHTML = 'Pop Arm'
+            })
+
+            //funcion
+            function addToCounter(){
+                score++;
+                counter.innerHTML = score;
+            }
+
+            function angry_in_birth_day(){
+                img.src = './images/arma.jpg';
+                text.innerHTML = "Happy birth day the creator's brother arm"
+            }
+
+            function Fbirth(){if (score == 5092552) {
+            img.src = './images/PI/Partyfueng.jpg';
+            text.innerHTML = "Happy birth day the creator's friend Fueng"
+            }}
+
+            function OCbirth(){if (score == 2042553) {
+            img.src = './images/PI/Party_Ohm.jpg';
+            text.innerHTML = "Happy birth day the creator Ohm Hobby"
+            }}
+
+            function Check(){if (img.src = './images/armc.jpg'){
+                    text.innerHTML = 'Pop Arm'}}
+
+        }
+    </script>
+</body>
+</html>
